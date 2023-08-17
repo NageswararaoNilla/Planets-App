@@ -6,30 +6,17 @@ import './index.css'
 
 const PlanetsSlider = props => {
   const {planetsList} = props
-  const settings = {
-    dots: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  }
+
   return (
-    <div className="carousel-container">
-      <div className="slider-container" data-testid="planets">
-        <Slider {...settings}>
-          {planetsList.map(eachPlanet => (
-            <PlanetItem planetDetails={eachPlanet} key={eachPlanet.id} />
-          ))}
-        </Slider>
-      </div>
+    <div className="planets-app-container" data-testid="planets">
+      <h1 className="heading">PLANETS</h1>
+      <Slider>
+        {planetsList.map(eachPlanet => (
+          <PlanetItem key={eachPlanet.id} planetDetails={eachPlanet} />
+        ))}
+      </Slider>
     </div>
   )
 }
 
 export default PlanetsSlider
-
-//
-//   <div className="slider-container" >
-//     <Slider {...settings}>
-//
-//     </Slider>
-//   </div>
-// </div>
